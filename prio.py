@@ -45,11 +45,11 @@ df_no_na = conf_data.dropna(subset=['ep_end_date'])
 latest_end_date_idx = df_no_na.groupby('conflict_id')['ep_end_date'].idxmax()
 latest_end_dates = conf_data.loc[latest_end_date_idx]
 
-
-
 duration = date.groupby('conflict_id')['duration'].max()
 #duration = date.loc[last_duration_idx]
 #plt.hist(duration)
+
+
 
 #새로운 데이터 프레임 new_conf_data
 new_conf_data = latest_end_dates.reset_index(drop=True)
